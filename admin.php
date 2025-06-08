@@ -7,7 +7,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     exit();
 }
 
-// Export do CSV
 if (isset($_GET['export']) && $_GET['export'] === 'csv') {
     header('Content-Type: text/csv');
     header('Content-Disposition: attachment;filename="tikety.csv"');
@@ -23,7 +22,6 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
     exit();
 }
 
-// Zpracování formulářů
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['ticket_id'], $_POST['status'])) {
         $ticketId = (int) $_POST['ticket_id'];
@@ -50,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Uzavření tiketu
 if (isset($_GET['close']) && is_numeric($_GET['close'])) {
     $ticketId = (int) $_GET['close'];
     $stmt = $conn->prepare("UPDATE tickets SET status='uzavřený' WHERE id=?");
@@ -60,7 +57,6 @@ if (isset($_GET['close']) && is_numeric($_GET['close'])) {
     exit();
 }
 
-// Přehled uživatelů a rolí
 $users = $conn->query("SELECT id, username, email, role FROM users");
 $roleStats = $conn->query("SELECT role, COUNT(*) as count FROM users GROUP BY role");
 $roleSummary = [];
@@ -68,7 +64,6 @@ while ($row = $roleStats->fetch_assoc()) {
     $roleSummary[$row['role']] = $row['count'];
 }
 
-// Filtrování a hledání
 $view = $_GET['view'] ?? 'active';
 $priorityFilter = $_GET['priority'] ?? '';
 $search = $conn->real_escape_string($_GET['search'] ?? '');

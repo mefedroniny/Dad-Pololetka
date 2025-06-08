@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "root"; // výchozí u XAMPP
-$password = ""; // výchozí heslo je prázdné
-$dbname = "ticket_system"; // název databáze
+$user = "root"; 
+$password = ""; 
+$dbname = "ticket_system";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 

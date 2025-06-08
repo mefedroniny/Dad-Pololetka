@@ -2,7 +2,6 @@
 session_start();
 require 'db.php';
 
-// Zkontroluj, zda je uživatel přihlášen jako admin
 if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     header('Location: index.php');
     exit();
@@ -12,7 +11,6 @@ $roleFilter = $_GET['filter_role'] ?? '';
 $search = $_GET['search'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Zkontroluj, jestli je user_id a new_role nastaveno v POST
     if (isset($_POST['user_id'], $_POST['new_role']) && is_numeric($_POST['user_id'])) {
         $userId = (int) $_POST['user_id'];
         $newRole = $_POST['new_role'];
@@ -24,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        // Ověření, že uživatel má správná oprávnění k úpravě role
         if ($userId !== $_SESSION['user_id']) {
             $stmt = $conn->prepare("UPDATE users SET role = ? WHERE id = ?");
             $stmt->bind_param("si", $newRole, $userId);
@@ -37,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Filtrování podle role a vyhledávání
 $where = [];
 if (!empty($roleFilter)) {
     $roleFilterSafe = $conn->real_escape_string($roleFilter);

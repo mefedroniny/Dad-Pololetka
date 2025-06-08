@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("si", $status, $ticketId);
 
     if ($stmt->execute()) {
-        header("Location: admin.php?updated=1"); // Přesměrování po úspěchu
+        header("Location: admin.php?updated=1"); 
         exit;
     } else {
         echo "Chyba při aktualizaci tiketu.";
