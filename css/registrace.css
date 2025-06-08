@@ -1,0 +1,113 @@
+/* Reset a základy */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1f2937; /* tmavý podklad */
+    color: white;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Kontejner formuláře */
+  form {
+    background-color: #111827;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  /* Nadpis – nepovinný */
+  form::before {
+    content: "Registrace účtu";
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f9fafb;
+    text-align: center;
+  }
+  
+  /* Popisky */
+  label {
+    font-weight: 600;
+    color: #d1d5db;
+  }
+  
+  /* Inputy */
+  input[type="text"],
+  input[type="password"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: #f9fafb;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    background-color: #111827;
+  }
+  
+  /* Tlačítko */
+  button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2563eb;
+  }
+
+  .zprava {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #1f2937;
+    color: #10b981;
+    border: 1px solid #10b981;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+  
+  .form-links {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .form-links a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .form-links a:hover {
+    text-decoration: underline;
+  }
+  
+  

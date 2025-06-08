@@ -1,0 +1,192 @@
+/* Reset a základy */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Hlavička */
+header {
+  background-color: #1f2937;
+  color: white;
+  padding: 20px;
+  border-bottom: 4px solid #3b82f6;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Login box */
+.login-box {
+  background-color: #111827;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.login-box form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.login-box button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #2563eb;
+}
+
+.login-box p {
+  margin: 0 10px 0 0;
+}
+
+.login-box a {
+  color: #60a5fa;
+  margin-left: 6px;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}
+
+.admin-menu {
+  margin-left: 20px;
+}
+
+.admin-link {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-link:hover {
+  text-decoration: underline;
+}
+
+/* Hlavní obsah */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Formulář */
+.ticket-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #374151;
+}
+
+.ticket-form input[type="text"],
+.ticket-form input[type="email"],
+.ticket-form select,
+.ticket-form textarea,
+.ticket-form input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border-color 0.2s;
+}
+
+.ticket-form input:focus,
+.ticket-form textarea:focus,
+.ticket-form select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background-color: #fff;
+}
+
+.ticket-form button {
+  margin-top: 30px;
+  padding: 14px 24px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-form button:hover {
+  background-color: #059669;
+}
+
+/* Patička */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e5e7eb;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Odkazy */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.status-open {
+  color: green;
+  font-weight: bold;
+}
+
+.status-in_progress {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-uzavřený {
+  color: red;
+  font-weight: bold;
+}
